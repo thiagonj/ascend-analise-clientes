@@ -16,6 +16,7 @@ st.title("Análise de Sentimentos - Projeto Ascend")
 texto = st.text_area("Digite um comentário de cliente:")
 
 if texto:
+    st.write("Debug: Bloco 'if texto' está sendo executado") # Adicionamos esta linha
     tokenizer, model = load_model()
     inputs = tokenizer(texto, return_tensors="pt", truncation=True, padding=True)
     with torch.no_grad():
